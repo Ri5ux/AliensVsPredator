@@ -55,6 +55,23 @@ public class Settings implements IPreInitEvent, IFlexibleConfiguration
     private ConfigSetting                  spawnsMarine;
     private ConfigSetting                  spawnsVarda;
 
+    public ConfigSetting                  spawnWeightEntityNauticomorph;
+    public ConfigSetting                  spawnWeightEntityDrone;
+    public ConfigSetting                  spawnWeightEntityWarrior;
+    public ConfigSetting                  spawnWeightEntityPraetorian;
+    public ConfigSetting                  spawnWeightEntityChestburster;
+    public ConfigSetting                  spawnWeightEntityFacehugger;
+    public ConfigSetting                  spawnWeightEntityYautjaWarrior;
+    public ConfigSetting                  spawnWeightEntityYautjaBerserker;
+    public ConfigSetting                  spawnWeightEntityMarine;
+    public ConfigSetting                  spawnWeightEntityEngineer;
+    public ConfigSetting                  spawnWeightEntitySpaceJockey;
+    public ConfigSetting                  spawnWeightEntityHammerpede;
+    public ConfigSetting                  spawnWeightEntityOctohugger;
+    public ConfigSetting                  spawnWeightEntityDeacon;
+    public ConfigSetting                  spawnWeightEntityTrilobite;
+
+
     @Override
     public ArrayList<ConfigSetting> allSettings()
     {
@@ -139,6 +156,22 @@ public class Settings implements IPreInitEvent, IFlexibleConfiguration
             updaterEnabled = new ConfigSettingBoolean(this, configuration.get(CATEGORY_OTHER, "updater", true, "Toggle the mod's update checking capabilities. Will not check for new updates if disabled.")).setRequiresRestart();
             debugToolsEnabled = new ConfigSettingBoolean(this, configuration.get(CATEGORY_OTHER, "debug_tools", false, "Toggle the built in debugging tools. Used primarily in development environments."));
             globalSoundVolume = new ConfigSettingInteger(this, configuration.get(CATEGORY_OTHER, "global_volume", 75, "Change the default volume of this mod's sounds. EXAMPLE: 100 = 100% Volume, 50 = 50% Volume, 150 = 150% Volume")).setRequiresRestart();
+
+            spawnWeightEntityNauticomorph = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityNauticomorph", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityDrone = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityDrone", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityWarrior = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityWarrior", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityPraetorian = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityPraetorian", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityChestburster = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityChestburster", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityFacehugger = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityFacehugger", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityYautjaWarrior = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityYautjaWarrior", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityYautjaBerserker = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityYautjaBerserker", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityMarine = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityMarine", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityEngineer = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityEngineer", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntitySpaceJockey = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntitySpaceJockey", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityHammerpede = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityHammerpede", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityOctohugger = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityOctohugger", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityDeacon = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityDeacon", 5, "Spawn Weight")).setRequiresRestart();
+            spawnWeightEntityTrilobite = new ConfigSettingInteger(this, configuration.get(CATEGORY_SPAWNING, "EntityTrilobite", 5, "Spawn Weight")).setRequiresRestart();
 
             overworldSpawnsEnabled = new ConfigSettingBoolean(this, configuration.get(CATEGORY_SPAWNING, "overworld_spawning", true, "If disabled, no mobs from this mod will spawn in the overworld.")).setRequiresRestart();
             autoSpawnsEnabled = new ConfigSettingBoolean(this, configuration.get(CATEGORY_SPAWNING, "auto_spawning", true, "If disabled, no mobs from this mod will spawn.")).setRequiresRestart();

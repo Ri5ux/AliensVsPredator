@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.avp.entities.EntityAPC;
 import org.avp.entities.EntityAcidPool;
 import org.avp.entities.EntityAcidProjectile;
@@ -348,30 +351,33 @@ public class EntityHandler implements IInitEvent
 
             if (AliensVsPredator.settings().shouldEvolvedXenomorphsSpawn())
             {
-                EntityRegistry.addSpawn(EntityNauticomorph.class, 5, 1, 2, EnumCreatureType.MONSTER, array(aquaAlienSpawns));
-                EntityRegistry.addSpawn(EntityDrone.class, 50, 1, 3, EnumCreatureType.MONSTER, array(alienSpawns));
-                EntityRegistry.addSpawn(EntityWarrior.class, 20, 1, 3, EnumCreatureType.MONSTER, array(alienSpawns));
-                EntityRegistry.addSpawn(EntityPraetorian.class, 5, 1, 2, EnumCreatureType.MONSTER, array(alienSpawns));
-                EntityRegistry.addSpawn(EntityChestburster.class, 5, 1, 3, EnumCreatureType.MONSTER, array(alienSpawns));
-                EntityRegistry.addSpawn(EntityFacehugger.class, 5, 1, 2, EnumCreatureType.MONSTER, array(alienSpawns));
+                EntityRegistry.addSpawn(EntityNauticomorph.class, (Integer) AliensVsPredator.settings().spawnWeightEntityNauticomorph.value(), 1, 2, EnumCreatureType.MONSTER, array(aquaAlienSpawns));
+                EntityRegistry.addSpawn(EntityDrone.class, (Integer) AliensVsPredator.settings().spawnWeightEntityDrone.value(), 1, 3, EnumCreatureType.MONSTER, array(alienSpawns));
+                EntityRegistry.addSpawn(EntityWarrior.class, (Integer) AliensVsPredator.settings().spawnWeightEntityWarrior.value(), 1, 3, EnumCreatureType.MONSTER, array(alienSpawns));
+                EntityRegistry.addSpawn(EntityPraetorian.class, (Integer) AliensVsPredator.settings().spawnWeightEntityPraetorian.value(), 1, 2, EnumCreatureType.MONSTER, array(alienSpawns));
+                EntityRegistry.addSpawn(EntityChestburster.class, (Integer) AliensVsPredator.settings().spawnWeightEntityChestburster.value(), 1, 3, EnumCreatureType.MONSTER, array(alienSpawns));
+                EntityRegistry.addSpawn(EntityFacehugger.class, (Integer) AliensVsPredator.settings().spawnWeightEntityFacehugger.value(), 1, 2, EnumCreatureType.MONSTER, array(alienSpawns));
             }
             else
             {
-                EntityRegistry.addSpawn(EntityFacehugger.class, 3, 1, 2, EnumCreatureType.MONSTER, array(alienSpawns));
+                EntityRegistry.addSpawn(EntityFacehugger.class, (Integer) AliensVsPredator.settings().spawnWeightEntityFacehugger.value(), 1, 2, EnumCreatureType.MONSTER, array(alienSpawns));
             }
 
-            EntityRegistry.addSpawn(EntityYautjaWarrior.class, 1, 0, 1, EnumCreatureType.MONSTER, array(predatorSpawns));
-            EntityRegistry.addSpawn(EntityYautjaBerserker.class, 1, 0, 1, EnumCreatureType.MONSTER, array(predatorSpawns));
+            LogManager.getLogger("AVP").info((Integer) AliensVsPredator.settings().spawnWeightEntityFacehugger.value());
+            LogManager.getLogger("AVP").info("Testing");
 
-            EntityRegistry.addSpawn(EntityMarine.class, 2, 1, 1, EnumCreatureType.CREATURE, array(marineSpawns));
+            EntityRegistry.addSpawn(EntityYautjaWarrior.class, (Integer) AliensVsPredator.settings().spawnWeightEntityYautjaWarrior.value(), 0, 1, EnumCreatureType.MONSTER, array(predatorSpawns));
+            EntityRegistry.addSpawn(EntityYautjaBerserker.class, (Integer) AliensVsPredator.settings().spawnWeightEntityYautjaBerserker.value(), 0, 1, EnumCreatureType.MONSTER, array(predatorSpawns));
 
-            EntityRegistry.addSpawn(EntityEngineer.class, 5, 1, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
-            EntityRegistry.addSpawn(EntitySpaceJockey.class, 2, 1, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
-            EntityRegistry.addSpawn(EntityHammerpede.class, 1, 0, 3, EnumCreatureType.MONSTER, array(vardaSpawns));
-            EntityRegistry.addSpawn(EntityOctohugger.class, 20, 0, 3, EnumCreatureType.MONSTER, array(vardaSpawns));
-            EntityRegistry.addSpawn(EntityDeacon.class, 1, 0, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
-            EntityRegistry.addSpawn(EntityEngineer.class, 1, 0, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
-            EntityRegistry.addSpawn(EntityTrilobite.class, 1, 0, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
+            EntityRegistry.addSpawn(EntityMarine.class, (Integer) AliensVsPredator.settings().spawnWeightEntityMarine.value(), 1, 1, EnumCreatureType.CREATURE, array(marineSpawns));
+
+            EntityRegistry.addSpawn(EntityEngineer.class, (Integer) AliensVsPredator.settings().spawnWeightEntityEngineer.value(), 1, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
+            EntityRegistry.addSpawn(EntitySpaceJockey.class, (Integer) AliensVsPredator.settings().spawnWeightEntitySpaceJockey.value(), 1, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
+            EntityRegistry.addSpawn(EntityHammerpede.class, (Integer) AliensVsPredator.settings().spawnWeightEntityHammerpede.value(), 0, 3, EnumCreatureType.MONSTER, array(vardaSpawns));
+            EntityRegistry.addSpawn(EntityOctohugger.class, (Integer) AliensVsPredator.settings().spawnWeightEntityOctohugger.value(), 0, 3, EnumCreatureType.MONSTER, array(vardaSpawns));
+            EntityRegistry.addSpawn(EntityDeacon.class, (Integer) AliensVsPredator.settings().spawnWeightEntityDeacon.value(), 0, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
+            EntityRegistry.addSpawn(EntityEngineer.class, (Integer) AliensVsPredator.settings().spawnWeightEntityEngineer.value(), 0, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
+            EntityRegistry.addSpawn(EntityTrilobite.class, (Integer) AliensVsPredator.settings().spawnWeightEntityTrilobite.value(), 0, 1, EnumCreatureType.MONSTER, array(vardaSpawns));
         }
     }
 
