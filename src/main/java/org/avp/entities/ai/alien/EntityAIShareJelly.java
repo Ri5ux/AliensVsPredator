@@ -20,7 +20,7 @@ public class EntityAIShareJelly extends EntityAIBase
     @Override
     public boolean shouldExecute()
     {
-        return this.xenomorph.getJellyLevel() > 0 && xenomorph.getHive() != null;
+        return this.xenomorph.getJellyLevel() > 0 && xenomorph.getHive() != null && xenomorph.getAttackTarget() == null;
     }
 
     @Override
